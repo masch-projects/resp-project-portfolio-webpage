@@ -1,0 +1,168 @@
+/* ------------------------------------------------------------ */
+/* [CSS] - main-index.css ( default )
+/* ------------------------------------------------------------ */
+/* defines all default css settings on the main index layout
+/* ------------------------------------------------------------ */
+
+
+
+
+/* -------------------------------------------- */
+/* Main - Layout ( default )
+/* -------------------------------------------- */
+
+main { 
+
+    /* our header is fixed , so we need the height of header
+    /* distance down */
+    margin-top: 5.3em;
+
+    /* the height will be better same sizes each row layout */
+    /* if smaller rows they will same size stretch */
+    display: grid;
+}
+
+
+/* ---------------------------------------------------- */
+/* Main Row Layout 
+/* ---------------------------------------------------- */
+
+main > div, footer  {
+
+    padding-left: calc(.1vw + .8em);
+    padding-right: calc(.1vw + .8em);
+
+    padding-top: calc(.1vw + 1em);
+    padding-bottom: calc(.1vw + 1em);
+
+}
+
+/* all row div get top line , but count from second
+/* to let no header line & footer line */
+
+main > div:nth-of-type( n + 2 ) {
+
+    border-top: 3px solid var(--black);
+    /* with shadow effect we simulate 3d */
+    box-shadow: 0px 5px 5px var(--black) inset;
+}
+
+/* welcome color & contact me  */
+.bg-main-row-1 { 
+
+    background: 
+    linear-gradient(217deg, rgba(209, 192, 165,1), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(97, 56, 11,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(97, 97, 97,1), rgba(0,0,255,0) 90.71%);
+
+}
+
+/* project color */
+.bg-main-row-2 { 
+
+   background-color: green;
+
+}
+
+/* more */
+.bg-main-row-4 { 
+
+   background-color: blueviolet;
+
+}
+
+
+
+/* ---------------------------------------------------- */
+/* Main Row Section Layout 
+/* ---------------------------------------------------- */
+
+main > div > section , footer > div  { 
+
+    background-color: var(--light-grey);
+    padding: calc(.1vw + .8em);
+
+    line-height: 1.5em;
+}
+
+
+
+/* ---------------------------------------------------- */
+/* Main Row Section Inside Content
+/* ---------------------------------------------------- */
+
+/* section -> h1 */
+
+main > div > section h1 { 
+
+    font-size: 1.2em;
+    margin:0;
+    padding-bottom: calc(.1vw + .8em);
+
+}
+
+
+
+
+/* ---------------------------------------------------- */
+/* Anker Go Up Button ( in main )
+/* ---------------------------------------------------- */
+
+/* only at 3 main row div by hover it will show our 
+/* go up anker button because before its possible 
+/* to use mouse scroll of length content */
+
+main > div:nth-of-type( n + 3 ):hover ~ a#anker-go-up-button {
+
+    visibility: visible;
+    opacity: 1;
+}
+
+
+a#anker-go-up-button {
+
+    /* for effect by showing slowly */
+    transition: all 1s ease-in-out;
+
+    /* default opacity 0 */
+    visibility: hidden;
+    /* the switch of opacity 0 to 1 is 
+    /* where transition work */
+    opacity: 0;
+
+    position: fixed;
+    bottom: 2.3em;
+    right: 1.5em;
+
+    /* default is link inline */
+    display: block;
+
+    width: calc(.3vw + 3.5em);
+    height: calc(.3vw + 3.5em);
+
+    background-color: var(--skin-brown);
+    color:var(--black);
+    text-decoration: none;
+    border: 3px solid var(--black);
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 1em;
+
+    box-shadow: 1px 1px 5px 5px black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+a#anker-go-up-button:hover {
+
+    visibility: visible;
+    opacity: 1;
+
+    transition: .3s;
+    background-color: var(--black);
+    color:var(--white);
+    
+}
